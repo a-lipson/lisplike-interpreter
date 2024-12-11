@@ -20,7 +20,7 @@ extra-source-files:
 description:         Please see the readme on GitHub at <https://github.com/a-lipson/lisplike-interpreter#readme>
 
 dependencies:
-- base >= 4.7
+- base
 
 ghc-options:
 - -Wall
