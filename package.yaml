@@ -1,0 +1,59 @@
+name:                lisplike-interpreter
+version:             0.1.0.0
+github:              "a-lipson/lisplike-interpreter"
+# license:             
+# author:              ""
+# maintainer:          ""
+# copyright:           ""
+
+extra-source-files:
+- readme.md
+- changelog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the readme.md file.
+description:         Please see the readme on GitHub at <https://github.com/a-lipson/lisplike-interpreter#readme>
+
+dependencies:
+- base >= 4.7
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+#- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  lisplike-interpreter-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - lisplike-interpreter
+
+tests:
+  lisplike-interpreter-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - lisplike-interpreter
